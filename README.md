@@ -44,7 +44,7 @@ Once the website is up and running, you'll find a range of sections to explore:
 
 - **Home:** The landing page welcomes visitors with an overview of the website's contents and purpose.
 - **Our Team:** Our organization and academy team
-- **Commitees:** Commitees in our conference
+- **Committees:** Committees in our conference
 - **Our Sponsors:** Our supporters through this conference
 
 ## License

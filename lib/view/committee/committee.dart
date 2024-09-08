@@ -57,33 +57,6 @@ class Certifications extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Committees'),
-        actions: [
-          PopupMenuButton<String>(
-            onSelected: navigateToCommitteePage,
-            itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-              const PopupMenuItem<String>(
-                value: 'Overview',
-                child: Text('Overview'),
-              ),
-              ...committees.map((String committee) => PopupMenuItem<String>(
-                value: committee,
-                child: Text(committee),
-              )).toList(),
-            ],
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
-              child: Row(
-                children: [
-                  Text('Committees'),
-                  Icon(Icons.arrow_drop_down),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
       body: Obx(() => controller.selectedCommittee.value == 'Overview'
           ? buildOverviewPage()
           : Column(

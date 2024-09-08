@@ -43,15 +43,16 @@ class TopNavigationBar extends StatelessWidget {
       color: Theme.of(context).scaffoldBackgroundColor,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (!Responsive.isLargeMobile(context))
             Expanded(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const NavigationButtonList(),
+                  const SizedBox(width: 20),
                   _buildCommitteesDropdown(context),
                 ],
               ),
