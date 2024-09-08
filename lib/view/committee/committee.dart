@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_portfolio/view_model/getx_controllers/committee_controller.dart';
+import 'package:flutter_portfolio/view_model/getx_controllers/commitee_controller.dart';
 import 'package:flutter_portfolio/view/projects/components/title_text.dart';
+import 'package:flutter_portfolio/view/committee/components/commitee_grid.dart';
 import 'package:get/get.dart';
 import '../../res/constants.dart';
 import '../../view_model/responsive.dart';
-import 'components/committee_grid.dart';
 import 'committee_pages/disec_page.dart';
 import 'committee_pages/ecosoc_page.dart';
 import 'committee_pages/unhrc_page.dart';
@@ -24,16 +24,16 @@ class Certifications extends StatelessWidget {
     }
     switch (committee) {
       case 'DISEC':
-        Get.to(() => DISECPage());
+        Get.to(() => const DISECPage());
         break;
       case 'ECOSOC':
-        Get.to(() => ECOSOCPage());
+        Get.to(() => const ECOSOCPage());
         break;
       case 'UNHRC':
-        Get.to(() => UNHRCPage());
+        Get.to(() => const UNHRCPage());
         break;
       case 'UNSC':
-        Get.to(() => UNSCPage());
+        Get.to(() => const UNSCPage());
         break;
     }
   }
@@ -44,7 +44,7 @@ class Certifications extends StatelessWidget {
       children: [
         const TitleText(prefix: 'Committees ', title: 'Overview'),
         const SizedBox(height: defaultPadding),
-        Text('Welcome to the Committees Overview. Here you can find information about all our committees:'),
+        const Text('Welcome to the Committees Overview. Here you can find information about all our committees:'),
         const SizedBox(height: defaultPadding),
         ...committees.map((committee) => ListTile(
           title: Text(committee),
@@ -95,11 +95,11 @@ class Certifications extends StatelessWidget {
                 const SizedBox(height: defaultPadding),
                 Expanded(
                   child: Responsive(
-                    desktop: CertificateGrid(crossAxisCount: 3, ratio: 1.5),
-                    extraLargeScreen: CertificateGrid(crossAxisCount: 4, ratio: 1.6),
-                    largeMobile: CertificateGrid(crossAxisCount: 1, ratio: 1.8),
-                    mobile: CertificateGrid(crossAxisCount: 1, ratio: 1.4),
-                    tablet: CertificateGrid(ratio: 1.7, crossAxisCount: 2),
+                    desktop: CommiteeGrid(crossAxisCount: 3, ratio: 1.5),
+                    extraLargeScreen: CommiteeGrid(crossAxisCount: 4, ratio: 1.6),
+                    largeMobile: CommiteeGrid(crossAxisCount: 1, ratio: 1.8),
+                    mobile: CommiteeGrid(crossAxisCount: 1, ratio: 1.4),
+                    tablet: CommiteeGrid(ratio: 1.7, crossAxisCount: 2),
                   ),
                 ),
               ],

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../model/commitee_model.dart';
 import '../../../res/constants.dart';
-import '../../../view model/getx_controllers/commitee_controller.dart';
+import '../../../view_model/getx_controllers/commitee_controller.dart';
 import 'commitee_details.dart';
-class CertificateGrid extends StatelessWidget {
+class CommiteeGrid extends StatelessWidget {
   final int crossAxisCount;
   final double ratio;
-  CertificateGrid({super.key, this.crossAxisCount = 3,  this.ratio=1.3});
-  final controller = Get.put(CertificationController());
+  CommiteeGrid({super.key, this.crossAxisCount = 3,  this.ratio=1.3});
+  final controller = Get.put(CommitteeController());
   @override
   Widget build(BuildContext context) {
     return GridView.builder(

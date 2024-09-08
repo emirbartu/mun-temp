@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_portfolio/view_model/responsive.dart';
-import 'package:flutter_portfolio/view_model/getx_controllers/committee_controller.dart';
+import 'package:flutter_portfolio/view_model/getx_controllers/commitee_controller.dart';
 import 'package:get/get.dart';
 import 'navigation_button_list.dart';
 import '../../committee/committee_pages/disec_page.dart';
@@ -23,16 +23,16 @@ class TopNavigationBar extends StatelessWidget {
     }
     switch (committee) {
       case 'DISEC':
-        Get.to(() => DISECPage());
+        Get.to(() => const DISECPage());
         break;
       case 'ECOSOC':
-        Get.to(() => ECOSOCPage());
+        Get.to(() => const ECOSOCPage());
         break;
       case 'UNHRC':
-        Get.to(() => UNHRCPage());
+        Get.to(() => const UNHRCPage());
         break;
       case 'UNSC':
-        Get.to(() => UNSCPage());
+        Get.to(() => const UNSCPage());
         break;
     }
   }

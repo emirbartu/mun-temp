@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:flutter_portfolio/view model/getx_controllers/team_controller.dart';
+import 'package:flutter_portfolio/view_model/getx_controllers/team_controller.dart';
 
 class TeamView extends StatelessWidget {
   final TeamController controller = Get.put(TeamController());
@@ -15,16 +15,16 @@ class TeamView extends StatelessWidget {
           children: [
             ElevatedButton(
               onPressed: () => showAcademy.value = true,
-              child: Text('Academy'),
+              child: const Text('Academy'),
             ),
-            SizedBox(width: 20),
+            const SizedBox(width: 20),
             ElevatedButton(
               onPressed: () => showAcademy.value = false,
-              child: Text('Organization'),
+              child: const Text('Organization'),
             ),
           ],
         ),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Obx(() => showAcademy.value ? _buildAcademySection() : _buildOrganizationSection()),
       ],
     );
@@ -34,10 +34,10 @@ class TeamView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('Academy Team', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-        SizedBox(height: 20),
+        const Text('Academy Team', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 20),
         _buildTeamGrid(),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Image.asset('assets/images/cui.png', width: 300, height: 200, fit: BoxFit.cover),
       ],
     );
@@ -47,10 +47,10 @@ class TeamView extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text('Organization Team', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-        SizedBox(height: 20),
+        const Text('Organization Team', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+        const SizedBox(height: 20),
         _buildTeamGrid(),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         Image.asset('assets/images/yafl.png', width: 300, height: 200, fit: BoxFit.cover),
       ],
     );
@@ -59,8 +59,8 @@ class TeamView extends StatelessWidget {
   Widget _buildTeamGrid() {
     return GridView.builder(
       shrinkWrap: true,
-      physics: NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
@@ -71,7 +71,7 @@ class TeamView extends StatelessWidget {
           onEnter: (_) => controller.onHover(index, true),
           onExit: (_) => controller.onHover(index, false),
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 200),
+            duration: const Duration(milliseconds: 200),
             color: controller.hovers[index] ? Colors.blue : Colors.grey,
             child: Center(child: Text('Team Member ${index + 1}')),
           ),

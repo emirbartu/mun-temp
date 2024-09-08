@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../model/commitee_model.dart';
 import '../../../res/constants.dart';
-import '../../../view model/getx_controllers/commitee_controller.dart';
+import '../../../view_model/getx_controllers/commitee_controller.dart';
 
 class CertificateStack extends StatelessWidget {
-  final controller = Get.put(CertificationController());
+  final controller = Get.put(CommitteeController());
   CertificateStack({super.key, required this.index});
   final int index;
 
