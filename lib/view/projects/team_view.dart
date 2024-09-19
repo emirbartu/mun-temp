@@ -38,7 +38,6 @@ class TeamView extends StatelessWidget {
         const SizedBox(height: 20),
         _buildTeamGrid(),
         const SizedBox(height: 20),
-        Image.asset('assets/images/cui.png', width: 300, height: 200, fit: BoxFit.cover),
       ],
     );
   }
