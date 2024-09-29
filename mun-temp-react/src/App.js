@@ -1,18 +1,27 @@
 import React from 'react';
-import './App.css';
-import DropdownButton from './components/DropdownButton';
+import { ChakraProvider, Box } from '@chakra-ui/react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Team from './components/Team';
+import Committees from './components/Committees';
+import Sponsors from './components/Sponsors';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>MUN Temp React App</h1>
-        <DropdownButton />
-        <p>
-          This is a converted React application with a single button dropdown.
-        </p>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Router>
+        <Box>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/committees" element={<Committees />} />
+            <Route path="/sponsors" element={<Sponsors />} />
+          </Routes>
+        </Box>
+      </Router>
+    </ChakraProvider>
   );
 }
 
