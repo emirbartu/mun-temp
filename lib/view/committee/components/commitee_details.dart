@@ -35,9 +35,9 @@ class CertificateStack extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               // Display the image here
-              certificateList[index].logoUrl.isNotEmpty
+              committeeList[index].logoUrl.isNotEmpty
                   ? Image.network(
-                      certificateList[index].logoUrl,
+                      committeeList[index].logoUrl,
                       height: 100,
                       width: double.infinity,
                       fit: BoxFit.cover,
@@ -53,7 +53,7 @@ class CertificateStack extends StatelessWidget {
                     ),
               const SizedBox(height: defaultPadding),
               Text(
-                certificateList[index].name,
+                committeeList[index].name,
                 style: Theme.of(context).textTheme.titleSmall!.copyWith(
                     color: Colors.white, fontWeight: FontWeight.bold),
                 maxLines: 1,
@@ -64,7 +64,7 @@ class CertificateStack extends StatelessWidget {
               const SizedBox(height: defaultPadding),
               InkWell(
                 onTap: () {
-                  launchUrl(Uri.parse(certificateList[index].inspect));
+                  launchUrl(Uri.parse(committeeList[index].page.toString()));
                 },
                 child: Container(
                   height: 40,

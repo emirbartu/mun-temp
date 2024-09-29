@@ -6,6 +6,8 @@ class TeamView extends StatelessWidget {
   final TeamController controller = Get.put(TeamController());
   final RxBool showAcademy = true.obs;
 
+  TeamView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -58,7 +60,8 @@ class TeamView extends StatelessWidget {
   Widget _buildTeamGrid() {
     return GridView.builder(
       shrinkWrap: true,
-      physics: const NeverScrollableScrollPhysics(),
+      // Remove or update the physics property
+      // physics: const NeverScrollableScrollPhysics(),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 3,
         crossAxisSpacing: 10,
@@ -72,7 +75,19 @@ class TeamView extends StatelessWidget {
           child: AnimatedContainer(
             duration: const Duration(milliseconds: 200),
             color: controller.hovers[index] ? Colors.blue : Colors.grey,
-            child: Center(child: Text('Team Member ${index + 1}')),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.network(
+                  'https://picsum.photos/id/${index + 1}/100/100', // Using Lorem Picsum for images
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
+                const SizedBox(height: 10),
+                Text('Team Member ${index + 1}'),
+              ],
+            ),
           ),
         ));
       },

@@ -13,7 +13,7 @@ class CommiteeGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(horizontal: 30),
-      itemCount: certificateList.length,
+      itemCount: committeeList.length,
       gridDelegate:  SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: crossAxisCount, childAspectRatio: ratio),
       itemBuilder: (context, index) {

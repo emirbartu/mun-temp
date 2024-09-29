@@ -51,7 +51,7 @@ class TopNavigationBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const NavigationButtonList(),
+                  NavigationButtonList(),
                   const SizedBox(width: 20),
                   _buildCommitteesDropdown(context),
                 ],

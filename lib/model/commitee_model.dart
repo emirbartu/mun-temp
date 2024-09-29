@@ -1,29 +1,39 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_portfolio/view/committee/committee_pages/disec_page.dart';
+import 'package:flutter_portfolio/view/committee/committee_pages/unsc_page.dart';
+import 'package:flutter_portfolio/view/committee/committee_pages/ecosoc_page.dart';
+import 'package:flutter_portfolio/view/committee/committee_pages/unhrc_page.dart';
 class CommiteeModel {
   final String logoUrl;
   final String name;
-  final String inspect;
+  final Widget page;
 
   CommiteeModel({
     required this.logoUrl,    
     required this.name,
-    required this.inspect,
+    required this.page,
   });
 }
 
-List<CommiteeModel> certificateList = [
+List<CommiteeModel> committeeList = [
   CommiteeModel(
-    logoUrl: "",
-    name: 'Commitee1',
-    inspect:  'https://www.coursera.org/account/accomplishments/certificate/HQ4LFHSF4LKZ',
+    logoUrl: "https://picsum.photos/200",
+    name: 'DISEC',
+    page: const DISECPage(),
   ),
   CommiteeModel(
-    logoUrl: "",
-    name: 'Commitee2',
-    inspect:  'https://www.linkedin.com/learning/certificates/450fc4e2f495726aea50a067caf586869ccf0cb92ebcc5a4c7b5648a95754a8f',
+    logoUrl: "https://picsum.photos/201",
+    name: 'UNSC',
+    page: const UNSCPage(),
   ),
   CommiteeModel(
-    logoUrl: "",
-    name: 'Commitee3',
-    inspect:  'https://www.udemy.com/certificate/UC-5b01c756-0d20-4342-94e6-9d5860d1c95e/',
+    logoUrl: "https://picsum.photos/202",
+    name: 'ECOSOC',
+    page: const ECOSOCPage(),
+  ),
+  CommiteeModel(
+    logoUrl: "https://picsum.photos/203",
+    name: 'UNHRC',
+    page: const UNHRCPage(),
   ),
 ];
